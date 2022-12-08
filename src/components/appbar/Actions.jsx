@@ -2,10 +2,18 @@ import { Favorite, Person, ShoppingCart } from '@mui/icons-material'
 import { Divider, ListItemButton, ListItemIcon } from '@mui/material'
 import React from 'react'
 import { MyList } from '../../styles/appBar'
+import { ActionIconsCOntainerDesktop } from '../../styles/appBar'
+import { ActionIconsCOntainerMobile } from '../../styles/appBar'
+import { color } from '../../styles/theme'
 
-const Actions = () => {
+
+const Actions = ({matches}) => {
+    const Components = matches ?
+        ActionIconsCOntainerMobile
+        :
+        ActionIconsCOntainerDesktop;
     return (
-        <div>
+        <Components>
             <MyList type="row">
                 <ListItemButton
                     sx={{
@@ -15,7 +23,8 @@ const Actions = () => {
                     <ListItemIcon
                         sx={{
                             display: "flex",
-                            justifyContent: "center"
+                            justifyContent: "center",
+                            color: matches && color.secondary
                         }}
                     >
                         <ShoppingCart />
@@ -31,7 +40,9 @@ const Actions = () => {
                     <ListItemIcon
                         sx={{
                             display: "flex",
-                            justifyContent: "center"
+                            justifyContent: "center",
+                            color: matches && color.secondary
+
                         }}
                     >
                         <Favorite />
@@ -47,7 +58,9 @@ const Actions = () => {
                     <ListItemIcon
                         sx={{
                             display: "flex",
-                            justifyContent: "center"
+                            justifyContent: "center",
+                            color: matches && color.secondary
+
                         }}
                     >
                         <Person />
@@ -56,7 +69,7 @@ const Actions = () => {
                 <Divider orientation='vertical' flexItem />
 
             </MyList>
-        </div>
+        </Components>
     )
 }
 

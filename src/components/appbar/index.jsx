@@ -10,7 +10,9 @@ const Appbar = () => {
     return (
         <div>
             {
-                matches ? <AppbarMobile/> : <AppbarDesktop/>
+                matches ? <AppbarMobile matches={matches} />
+                    :
+                    <AppbarDesktop matches={matches} />
             }
         </div>
     )

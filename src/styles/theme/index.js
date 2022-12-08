@@ -7,7 +7,7 @@ export const color = {
     info: "#00a2ff",
     danger: "#FF5722",
     warning: "#FFC107",
-    dark: "#0e1b20",
+     dark: "#0e1b20",
     light: "#aaa",
     muted: "#abafb3",
     border: "#DDDFE1",
